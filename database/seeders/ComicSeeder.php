@@ -25,12 +25,13 @@ class ComicSeeder extends Seeder
             $comic->title = $comic_item['title'];
             $comic->description = $comic_item['description'];
             $comic->thumb = $comic_item['thumb'];
-            $comic->price = $comic_item['price'];
+            //remove $ from price and convert to float
+            $comic->price = floatval(str_replace("$", "", $comic_item['price']));
             $comic->series = $comic_item['series'];
             $comic->sale_date = $comic_item['sale_date'];
             $comic->type = $comic_item['type'];
-            $comic->artists = $comic_item['artists'];
-            $comic->writers = $comic_item['writers'];
+            $comic->artists = implode(", ", $comic_item['artists']);
+            $comic->artists = implode(", ", $comic_item['writers']);
             //save comic
             $comic->save();
         }
