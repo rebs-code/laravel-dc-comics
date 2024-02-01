@@ -5,15 +5,16 @@
         <div>
             <h2>Insert a new Comic Book Record</h2>
         </div>
-        <form>
+        {{-- TODO: ADD MATCHING NAMES TO THE INPUTS --}}
+        <form action="{{ route('comics.store') }}" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Title</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter title">
+                <input type="text" class="form-control" name="title" placeholder="Enter title">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Price</label>
