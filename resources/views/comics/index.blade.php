@@ -13,7 +13,7 @@
                     <div class="comic">
                         {{-- <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}"> --}}
                         <h5 class="text-uppercase text-center">{{ $comic->title }} <a
-                                href="{{ route('comics.show', $comic->id) }}" alt="comic book">view details</a></h5>
+                                href="{{ route('comics.show', $comic) }}" alt="comic book">view details</a></h5>
                     </div>
                 @endforeach
             </div>
