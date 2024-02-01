@@ -36,11 +36,14 @@ class ComicController extends Controller
         $comic = new Comic();
 
         $comic->title = $data['title'];
-        $comic->type = $data['type'];
-        $comic->weight = $data['weight'];
-        $comic->cooking = $data['cooking'];
         $comic->description = $data['description'];
-        $comic->img  = $data['img'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date  = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->artists = $data['artists'];
+        $comic->writers = $data['writers'];
 
         $comic->save();
 
