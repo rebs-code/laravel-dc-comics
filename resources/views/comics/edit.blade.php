@@ -6,8 +6,9 @@
             <h2>Modify an Existing Comic Book Record</h2>
             <h4>Modifying: {{ $comic->title }}</h4>
         </div>
-        <form action="{{ route('comics.store') }}" method="POST">
+        <form action="{{ route('comics.edit, $comic->id') }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="form-group">
                 <label for="exampleInputEmail1">Title</label>
                 <input type="text" class="form-control" name="title" placeholder="Enter title" value="{{ $comic->title }}">

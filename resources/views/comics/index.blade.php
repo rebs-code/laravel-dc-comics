@@ -16,7 +16,7 @@
                     <div class="comic">
                         {{-- <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}"> --}}
                         <h5 class="text-uppercase text-center">{{ $comic->title }} <a
-                                href="{{ route('comics.show', $comic) }}" alt="comic book">view details</a>
+                                href="{{ route('comics.show', $comic) }}" alt="comic book">view details</a> -
                             <a href="{{ route('comics.edit', $comic) }}" alt="comic book">edit details</a>
 
                         </h5>
