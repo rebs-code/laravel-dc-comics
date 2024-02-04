@@ -14,7 +14,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" name="description" rows="3" value="{{ $comic->description }}"></textarea>
+                <textarea class="form-control" name="description" rows="3" value="{ $comic->description }}"></textarea>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Price</label>
