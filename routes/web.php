@@ -16,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', [ComicController::class, 'index'])->name('comics');
 
+
+//we use the resource method to generate all the routes for the CRUD operations, otherwise we would have to write them all manually (one route for each operation)
 Route::resource('comics', ComicController::class);
