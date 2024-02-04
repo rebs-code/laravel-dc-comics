@@ -47,6 +47,7 @@ class ComicController extends Controller
 
         $comic->save();
 
+        //once the record is saved, we redirect to the show page of the comic
         return redirect()->route('comics.show', $comic->id);
     }
 

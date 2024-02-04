@@ -5,7 +5,6 @@
         <div>
             <h2>Insert a new Comic Book Record</h2>
         </div>
-        {{-- TODO: ADD MATCHING NAMES TO THE INPUTS --}}
         <form action="{{ route('comics.store') }}" method="POST">
             @csrf
             <div class="form-group">
