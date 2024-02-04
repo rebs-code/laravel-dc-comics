@@ -5,8 +5,9 @@
         <div>
             <h2>Modify an Existing Comic Book Record</h2>
             <h4>Modifying: {{ $comic->title }}</h4>
+            <p><a href="{{ route('comics.index') }}">Back to list of Comics</a></p>
         </div>
-        <form action="{{ route('comics.edit, $comic->id') }}" method="POST">
+        <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
