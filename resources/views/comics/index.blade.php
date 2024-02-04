@@ -18,6 +18,14 @@
                         <h5 class="text-uppercase text-center">{{ $comic->title }} <a
                                 href="{{ route('comics.show', $comic) }}" alt="comic book">view details</a> -
                             <a href="{{ route('comics.edit', $comic) }}" alt="comic book">edit details</a>
+                            <form action="
+                            {{ route('comics.destroy', $comic->id) }}"
+                                method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="delete">
+
+                            </form>
 
                         </h5>
                     </div>
