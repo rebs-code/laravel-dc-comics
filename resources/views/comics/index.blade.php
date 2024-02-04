@@ -5,6 +5,7 @@
         <div class="container text-center">
             <div>
                 <h3>Comics List</h3>
+                {{-- link to create a new record --}}
                 <a href="{{ route('comics.create') }}">Create a new record</a>
             </div>
         </div>

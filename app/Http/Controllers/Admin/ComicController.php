@@ -57,6 +57,11 @@ class ComicController extends Controller
     {
         // $comic = Comic::find($id);
 
+        //if data is not found, return 404
+        if ($comic === null) {
+            abort(404);
+        }
+
         return view('comics.show', compact('comic'));
     }
 
