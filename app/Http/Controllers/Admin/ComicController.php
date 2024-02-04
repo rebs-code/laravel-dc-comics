@@ -55,7 +55,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        // $comic = Comic::find($id);
+        // $comic = Comic::findOrFail($id);
 
         //if data is not found, return 404
         if ($comic === null) {

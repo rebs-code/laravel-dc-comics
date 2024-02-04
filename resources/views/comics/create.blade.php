@@ -14,44 +14,37 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
+                <textarea class="form-control" name="description" rows="3"></textarea>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Price</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter price">
+                <input type="text" class="form-control" placeholder="Enter price" name="price">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Series</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter Series">
+                <input type="text" class="form-control" placeholder="Enter Series" name="series">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">
                     Date
                 </label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter date">
+                <input type="text" class="form-control" placeholder="Enter date" name="sale_date">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Type</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter type">
+                <input type="text" class="form-control" placeholder="Enter type" name="type">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Artists</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter artists separated by comma">
+                <input type="text" class="form-control" placeholder="Enter artists separated by comma" name="artists">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Writers</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter Writers separated by comma">
+                <input type="text" class="form-control" placeholder="Enter Writers separated by comma" name="writers">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Thumb</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter thumb url">
+                <input type="text" class="form-control" placeholder="Enter thumb url" name="thumb">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
