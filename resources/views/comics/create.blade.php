@@ -21,7 +21,7 @@
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Title</label>
-                <input type="text" class="form-control" name="title" placeholder="Enter title" required>
+                <input type="text" class="form-control" name="title" placeholder="Enter title">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
@@ -33,8 +33,12 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Series</label>
-                <input type="text" class="form-control" placeholder="Enter Series" name="series">
+                <input type="text" class="form-control @error('series') is-invalid @enderror" placeholder="Enter Series"
+                    name="series">
             </div>
+            @error('series')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <div class="form-group">
                 <label for="exampleInputEmail1">
                     Date

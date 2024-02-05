@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -32,18 +33,29 @@ class ComicController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
-            'title' => 'required|max:100',
-            'description' => 'required',
-            //validate url to end with .jpg, .png, .jpeg, .webp
-            'thumb' => 'max:2048 | url | ends_with:.jpg,.png,.jpeg,.webp',
-            'price' => 'required|numeric',
-            'series' => 'required|max:100',
-            'sale_date' => 'required|date',
-            'type' => 'required|max:50',
-            'artists' => 'max:1000',
-            'writers' => 'max:1000',
-        ]);
+        $request->validate(
+            [
+                'title' => 'required|max:100',
+                'description' => 'required',
+                //validate url to end with .jpg, .png, .jpeg, .webp
+                'thumb' => 'max:2048 | url | ends_with:.jpg,.png,.jpeg,.webp',
+                'price' => 'required|numeric',
+                'series' => 'required|max:100',
+                'sale_date' => 'required|date',
+                'type' => 'required|max:50',
+                'artists' => 'max:1000',
+                'writers' => 'max:1000',
+            ],
+            //personalize the error messages
+            [
+                'title.required' => 'Insert a valid title',
+                'max' => 'The :attribute must be max :max characters',
+                'url' => 'The :attribute must be a valid url',
+                'ends_with' => 'The :attribute must end with :values',
+                'numeric' => 'The :attribute must be a number',
+                'date' => 'The :attribute must be a valid date',
+            ]
+        );
 
         $data = $request->all();
 
