@@ -9,7 +9,7 @@
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Title</label>
-                <input type="text" class="form-control" name="title" placeholder="Enter title">
+                <input type="text" class="form-control" name="title" placeholder="Enter title" required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>

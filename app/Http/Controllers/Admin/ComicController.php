@@ -31,20 +31,38 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required|max:100',
+            'description' => 'required',
+            //validate url to end with .jpg, .png, .jpeg, .webp
+            'thumb' => 'max:2048 | url | ends_with:.jpg,.png,.jpeg,.webp',
+            'price' => 'required|numeric',
+            'series' => 'required|max:100',
+            'sale_date' => 'required|date',
+            'type' => 'required|max:50',
+            'artists' => 'max:1000',
+            'writers' => 'max:1000',
+        ]);
+
         $data = $request->all();
 
         $comic = new Comic();
 
-        $comic->title = $data['title'];
-        $comic->description = $data['description'];
-        $comic->thumb = $data['thumb'];
-        $comic->price = $data['price'];
-        $comic->series = $data['series'];
-        $comic->sale_date  = $data['sale_date'];
-        $comic->type = $data['type'];
-        $comic->artists = $data['artists'];
-        $comic->writers = $data['writers'];
+        // $comic->title = $data['title'];
+        // $comic->description = $data['description'];
+        // $comic->thumb = $data['thumb'];
+        // $comic->price = $data['price'];
+        // $comic->series = $data['series'];
+        // $comic->sale_date  = $data['sale_date'];
+        // $comic->type = $data['type'];
+        // $comic->artists = $data['artists'];
+        // $comic->writers = $data['writers'];
 
+        // $comic->save();
+
+        //using fill method to fill the model with the data from the form
+        $comic->fill($data);
         $comic->save();
 
         //once the record is saved, we redirect to the show page of the comic
