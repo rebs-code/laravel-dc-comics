@@ -76,6 +76,7 @@
                 <input type="text" class="form-control" placeholder="Enter thumb url" name="thumb"
                     value="{{ old('thumb', $comic->thumb) }}">
             </div>
+            {{-- submit button --}}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
