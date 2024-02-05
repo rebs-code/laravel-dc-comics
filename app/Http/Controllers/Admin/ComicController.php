@@ -112,6 +112,29 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+        $request->validate(
+            [
+                'title' => 'required|max:100',
+                'description' => 'required',
+                //validate url to end with .jpg, .png, .jpeg, .webp
+                'thumb' => 'max:2048 | url',
+                'price' => 'required|numeric',
+                'series' => 'required|max:100',
+                'sale_date' => 'required|date',
+                'type' => 'required|max:50',
+                'artists' => 'max:1000',
+                'writers' => 'max:1000',
+            ],
+            //personalize the error messages
+            [
+                'title.required' => 'Insert a valid title',
+                'max' => 'The :attribute must be max :max characters',
+                'url' => 'The :attribute must be a valid url',
+                'ends_with' => 'The :attribute must end with :values',
+                'numeric' => 'The :attribute must be a number',
+                'date' => 'The :attribute must be a valid date',
+            ]
+        );
         $data = $request->all();
         $comic->update($data);
         // dd($data);

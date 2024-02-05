@@ -7,12 +7,24 @@
             <h4>Modifying: {{ $comic->title }}</h4>
             <p><a href="{{ route('comics.index') }}">Back to list of Comics</a></p>
         </div>
+        {{-- code to display the error messages --}}
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        {{-- form to update --}}
         <form action="{{ route('comics.update', $comic->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
                 <label for="exampleInputEmail1">Title</label>
-                <input type="text" class="form-control" name="title" placeholder="Enter title" value="{{ $comic->title }}">
+                <input type="text" class="form-control" name="title" placeholder="Enter title"
+                    value="{{ $comic->title }}">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>

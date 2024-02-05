@@ -32,7 +32,7 @@
             {{-- description input --}}
             <div>
                 <label for="exampleFormControlTextarea1" class="form-label ">Description</label>
-                <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="3"></textarea>
+                <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="3">{{ old('description') }}</textarea>
             </div>
             {{-- description error --}}
             @error('description')
